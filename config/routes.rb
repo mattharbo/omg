@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resources :clubs, only:[:index]
   resources :teams, only:[:index]
   resources :seasons, only:[:index]
-  resources :players, only:[:index]
+  resources :players, only:[:index,:new,:create]
   resources :fixtures, only:[:index,:show,:edit,:update]
   resources :eventtypes, only:[:index]
   resources :goals, only:[:index,:new,:create]

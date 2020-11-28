@@ -19,9 +19,6 @@ class GoalsController < ApplicationController
 	end
 
 	def create
-
-		# raise
-
 		Goal.create(
 			team:Team.find(params['goal']['team']),
 			minute:params['goal']['minute'],
@@ -56,7 +53,7 @@ class GoalsController < ApplicationController
 
 	private 
 
-	#useless…
+	#useless can't make it work…
 	# def goal_params
 	# 	params.require(:goal).permit(:team,:minute,:fixture)
 	# end

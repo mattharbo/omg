@@ -1,0 +1,39 @@
+<small>
+	<strong>New player</strong>
+</small>
+<br><br>
+
+<%=form_for @player do |p|%>
+	<%=p.label :forename,"Forename"%>
+	<%=p.text_field :forename%>
+
+	<br>
+
+	<%=p.label :name,"Name"%>
+	<%=p.text_field :name%>
+
+	<br>
+
+	<%=p.label :shirtnumber,"Shirtnumber"%>
+	<%=p.number_field :shirtnumber%>
+
+	<br>
+
+	<%=p.label :nationality,"Nationality"%>
+	<%=p.text_field :nationality%>
+
+	<br>
+
+	<%=p.label :position, "Position"%>
+    <%=p.select(:position, options_for_select(@positions), {:include_blank => true}) %>
+
+    <br>
+
+    <%=p.label :team, "Team"%>
+    <%=p.select(:team, options_for_select(@teams)) %>
+    
+
+    <br><br>
+
+    <%=p.submit 'Create player' %>
+<%end%>

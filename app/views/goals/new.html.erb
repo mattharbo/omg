@@ -20,7 +20,7 @@
         <%= e.select(:player, options_for_select(@players)) %>
         <br>
         <small>
-            Can't find your player?
+            <%= link_to "Can't find your player?", new_player_path %> 
         </small>
 
         <br><br>

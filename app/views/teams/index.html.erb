@@ -1,0 +1,8 @@
+<small>
+	<strong>Teams#index</strong>
+</small>
+<br><br>
+
+<%@teams.each do |team|%>
+	(<%=team.id%>) <%=team.club.shortname%> | <%=team.level%><br>
+<%end%>

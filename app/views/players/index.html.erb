@@ -1,0 +1,17 @@
+<small>
+	<strong>Players#index</strong>
+</small>
+<br><br>
+
+<%@players.each do |player|%>
+	(<%=player.id%>)
+	<%=player.forename%>
+	<strong><%=player.name%></strong>
+	<small>
+		(#<%=player.shirtnumber%> <%=player.team.club.shortname%>)
+		<%=player.nationality%> | 
+		<%=player.position%>
+	</small>
+
+	<br>
+<%end%>

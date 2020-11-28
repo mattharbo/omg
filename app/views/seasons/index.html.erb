@@ -1,0 +1,8 @@
+<small>
+	<strong>Seasons#index</strong>
+</small>
+<br><br>
+
+<%@seasons.each do |season|%>
+	(<%=season.id%>) <%=season.competition.name%> <%=season.startyear%><br>
+<%end%>

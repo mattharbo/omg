@@ -1,0 +1,10 @@
+<small>
+	<strong>Eventtypes#index</strong>
+</small>
+<br><br>
+
+<%@eventtypes.each do |eventtype|%>
+	(<%=eventtype.id%>)
+	<%=eventtype.name%>
+	<br>
+<%end%>

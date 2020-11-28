@@ -1,0 +1,21 @@
+<small>
+	<strong>Goals#index</strong>
+</small>
+<br><br>
+
+<% @goals.each do |goal| %>
+	<small>
+		(<%= goal.id %>)
+	</small>
+	<small>
+		#<%=goal.fixture.hometeam.club.acronym%><%=goal.fixture.awayteam.club.acronym%> | 
+	</small>
+	Goal for
+	<strong>
+		<%=goal.team.club.shortname%>
+	</strong>
+	<small>
+		(<%=goal.minute%> min)
+	</small>	
+	<br>
+<% end %>

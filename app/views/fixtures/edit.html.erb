@@ -1,0 +1,16 @@
+<small>
+	<strong>Fixtures#edit</strong>
+</small>
+<br><br>
+
+<%= form_for @fixture do |f| %>
+	<%= f.label :scorehome, @fixture.hometeam.club.acronym %>
+	<%= f.text_field :scorehome %>
+
+	<%= f.label :scoreaway, @fixture.awayteam.club.acronym %>
+	<%= f.text_field :scoreaway %>
+
+	<%= f.hidden_field :status, :value => 'played' %>
+
+	<%= f.submit 'Update score' %>
+<% end %>

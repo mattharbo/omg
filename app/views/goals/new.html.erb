@@ -1,0 +1,33 @@
+<small>
+    <strong>Fixture#new</strong>
+</small>
+<br><br>
+
+<%= form_for @goal do |g| %>
+
+	<%= g.hidden_field :fixture, :value => "#{@passed_fixture.id}" %>
+
+	<%= g.label :team, @passed_fixture.hometeam.club.acronym %>
+    <%= g.radio_button :team, "#{@passed_fixture.hometeam.id}" %>
+
+    <%= g.label :team, @passed_fixture.awayteam.club.acronym %>
+    <%= g.radio_button :team, "#{@passed_fixture.awayteam.id}" %>
+
+    <br><br>
+    
+    <%= g.text_field :minute %>
+    <%= g.label :minute, "Min" %>
+
+    <br><br>
+    <%= g.submit 'Create goal' %>
+
+<%end%>
+
+<br>
+
+<% unless @savedgoals.nil? %>
+	<% @savedgoals.each do |b| %>
+		<%= b.team.club.shortname %> (<%= b.minute %>)
+		<br>
+	<% end %>
+<% end %>

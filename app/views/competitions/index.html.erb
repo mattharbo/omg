@@ -1,0 +1,8 @@
+<small>
+	<strong>Competitions#index</strong>
+</small>
+<br><br>
+
+<%@competitions.each do |competition|%>
+	(<%=competition.id%>) <%=competition.name%> | <%=competition.country%>
+<%end%>

@@ -1,0 +1,8 @@
+<small>
+	<strong>Clubs#index</strong>
+</small>
+<br><br>
+
+<%@clubs.each do |club|%>
+	(<%=club.id%>) <%=club.name%> | <%=club.acronym%> | <%=club.shortname%> <br>
+<%end%>

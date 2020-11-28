@@ -2,3 +2,32 @@
 	<strong>Goalevents#index</strong>
 </small>
 <br><br>
+
+<% @goalevents.each do |goalevent| %>
+	<small>
+		(<%= goalevent.id %>)
+
+		<strong>
+			<%= goalevent.player.name %>
+		</strong>
+
+		<%if goalevent.penalty? %>
+			(Penalty
+		<%else%>
+			(<%= goalevent.eventtype.name.capitalize %>
+		<%end%>
+		
+		 at <%= goalevent.goal.minute %>')
+		| 
+		xCoord: <%= goalevent.enddepth %>
+		yCoord: <%= goalevent.endwidth %>
+
+		|
+		#<%= goalevent.goal.fixture.hometeam.club.acronym %><%= goalevent.goal.fixture.awayteam.club.acronym %>
+	</small>
+	
+	
+
+
+	<br>
+<% end %>

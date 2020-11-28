@@ -14,9 +14,38 @@
     <%= g.radio_button :team, "#{@passed_fixture.awayteam.id}" %>
 
     <br><br>
-    
-    <%= g.text_field :minute %>
-    <%= g.label :minute, "Min" %>
+    <%= g.nested_fields_for :goalevents do |e| %>
+
+        <%= e.label :player, "Player"%>
+        <%= e.select(:player, options_for_select(@players)) %>
+        <br>
+        <small>
+            Can't find your player?
+        </small>
+
+        <br><br>
+
+        <%= g.text_field :minute %>
+        <%= g.label :minute, "Min" %>
+
+        <br><br>
+        
+        <%= e.label :enddepth, "xCoord" %> 
+        <%= e.text_field :enddepth %>
+
+        <br>
+
+        <%= e.label :endwidth, "yCoord" %> 
+        <%= e.text_field :endwidth %>
+
+        <br><br>
+
+        <%= label :penalty, "Penalty", value: false %>
+        <%= e.radio_button :penalty, true, :value => true%>
+
+    <% end %>
+
+
 
     <br><br>
     <%= g.submit 'Create goal' %>

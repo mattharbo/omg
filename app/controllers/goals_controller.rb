@@ -8,9 +8,9 @@ class GoalsController < ApplicationController
 	def new
 		@savedgoals=Goal.where(fixture:params[:fixture])
 		@passed_fixture = Fixture.find(params[:fixture])
-		allplayers=Player.where(team:@passed_fixture.hometeam).or(Player.where(team:@passed_fixture.awayteam))
+		allplayers=Player.where(team:@passed_fixture.hometeam).or(Player.where(team:@passed_fixture.awayteam)).order(:shirtnumber)
 		@players = allplayers.map do |d|
-			["("+d.shirtnumber.to_s+") "+d.name, d.id]
+			[d.shirtnumber.to_s+" | "+d.name+" "+d.forename+" ("+d.team.club.acronym+")", d.id]
 		end
 		@players.unshift(nil)
 		@goal=Goal.new

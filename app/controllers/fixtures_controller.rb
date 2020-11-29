@@ -3,7 +3,7 @@ class FixturesController < ApplicationController
 	before_action :set_fixture, only: [:show,:edit,:update]
 
 	def index
-		@fixtures=Fixture.all
+		@fixtures=Fixture.all.order(stage: :desc)
 	end
 
 	def show

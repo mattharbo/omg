@@ -27,7 +27,7 @@
 <br>
 
 <%if @fixture.scorehome.to_i+@fixture.scoreaway.to_i > 0%>
-	<%if @goals.count == 0%>
+	<%if @goals.count != @fixture.scorehome.to_i+@fixture.scoreaway.to_i%>
 		<i>
 			Scorers are missing
 		</i>

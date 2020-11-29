@@ -7,6 +7,21 @@ class FixturesController < ApplicationController
 	end
 
 	def show
+		goals=Goal.where(fixture:params[:id])
+
+		@goals=[]
+
+		goals.each do |goal|
+
+			goalscored = Goalevent.where(goal:goal.id)
+
+			unless goalscored.empty?
+			  if Goalevent.where(goal:goal.id).take.eventtype.name="goal"
+					@goals << Goalevent.where(goal:goal.id).take	
+				end
+			end
+	
+		end
 	end
 
 	def edit

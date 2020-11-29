@@ -1,0 +1,72 @@
+<small>
+	<strong>Fixtures#show</strong>
+</small>
+
+<center>
+<br>
+
+<%= @fixture.season.competition.name %> • Stage <%= @fixture.stage %>
+<!-- | Saison <%= @fixture.season.startyear %> -->
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<%= @fixture.date %>
+
+<br><br>
+
+<h3>
+	<%= @fixture.hometeam.club.shortname %>
+	&nbsp;&nbsp;&nbsp;&nbsp;
+	<%= @fixture.scorehome %>
+	 - 
+	<%= @fixture.scoreaway %>
+	&nbsp;&nbsp;&nbsp;&nbsp;
+	<%= @fixture.awayteam.club.shortname %>
+</h3>
+
+<br>
+
+<%if @fixture.scorehome.to_i+@fixture.scoreaway.to_i > 0%>
+	<%if @goals.count == 0%>
+		<i>
+			Scorers are missing
+		</i>
+	<%else%>
+		<% @goals.each do |goal| %>
+			<% if goal.goal.team.id == @fixture.hometeam.id %>
+				<small>
+					<%= goal.player.forename %>
+					<strong>
+						<%= goal.player.name %>
+					</strong>
+					<%= goal.goal.minute %>'
+				</small>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				&nbsp;
+
+				<br>
+
+			<% else %>
+
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				&nbsp;
+
+				<small>
+					<%= goal.goal.minute %>'
+					<%= goal.player.forename %>
+					<strong>
+						<%= goal.player.name %>
+					</strong>
+				</small>
+				<br>
+
+			<%end%>
+		<%end%>
+	<%end%>
+<%end%>
+
+</center>

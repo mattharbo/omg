@@ -13,3 +13,15 @@
  *= require_tree .
  *= require_self
  */
+
+@font-face {
+   font-family: "Avenir";
+   src: asset-url('avenir_next.ttc') format("truetype");
+ }
+
+ body{
+   font-family: "Avenir", sans-serif;
+   font-size:14px;
+   margin:0;
+   height: 100vh;
+ }

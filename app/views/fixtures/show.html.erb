@@ -40,6 +40,11 @@
 						<%= goal.player.name %>
 					</strong>
 					<%= goal.goal.minute %>'
+					<% if goal.penalty? %>
+						<small>
+							(PEN)
+						</small>
+					<%end%>
 				</small>
 				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -57,6 +62,13 @@
 
 				<small>
 					<%= goal.goal.minute %>'
+
+					<% if goal.penalty? %>
+						<small>
+							(PEN)
+						</small>
+					<%end%>
+					
 					<%= goal.player.forename %>
 					<strong>
 						<%= goal.player.name %>

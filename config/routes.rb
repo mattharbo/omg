@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resources :seasons, only:[:index]
   resources :players, only:[:index,:new,:create]
   resources :fixtures, only:[:index,:show,:edit,:update]
+  # get '/game/:id', to: 'fixtures#show'
   resources :eventtypes, only:[:index]
   resources :goals, only:[:index,:new,:create]
   resources :goalevents, only:[:index]

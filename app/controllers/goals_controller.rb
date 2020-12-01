@@ -27,9 +27,14 @@ class GoalsController < ApplicationController
 
 		#looping into something bigger when will have multiple goalevents added at a time
 		params['goal']['goalevents_attributes'].each do |event,eventattribute|
+
+			player=Player.find(eventattribute['player'])
+
+			player.team!=Team.find(params['goal']['team']) ? og=true : og=false
+
 			Goalevent.create(
 				goal:Goal.last,
-				player:Player.find(eventattribute['player']),
+				player:player,
 				# startdepth:eventattribute['startdepth'],
 				# startwidth:eventattribute['startwidth'],
 				enddepth:eventattribute['enddepth'],
@@ -37,7 +42,8 @@ class GoalsController < ApplicationController
 				eventtype:Eventtype.find(1),
 				# if eventtype is 1 then assist is 0
 				assist:0,
-				penalty:eventattribute['penalty']
+				penalty:eventattribute['penalty'],
+				autogoal:og
 			)
 		end
 

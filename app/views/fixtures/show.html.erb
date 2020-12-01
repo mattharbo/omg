@@ -41,6 +41,10 @@
 						<small>
 							(PEN)
 						</small>
+					<% elsif goal.autogoal? %>
+						<small>
+							(OG)
+						</small>
 					<%end%>
 					<%= goal.goal.minute %>'
 				</small>
@@ -64,6 +68,10 @@
 					<% if goal.penalty? %>
 						<small>
 							(PEN)
+						</small>
+					<% elsif goal.autogoal? %>
+						<small>
+							(OG)
 						</small>
 					<%end%>
 					

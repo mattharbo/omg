@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_15_193612) do
+ActiveRecord::Schema.define(version: 2020_12_01_171509) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -65,6 +65,7 @@ ActiveRecord::Schema.define(version: 2020_11_15_193612) do
     t.boolean "penalty"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.boolean "autogoal"
     t.index ["eventtype_id"], name: "index_goalevents_on_eventtype_id"
     t.index ["goal_id"], name: "index_goalevents_on_goal_id"
     t.index ["player_id"], name: "index_goalevents_on_player_id"

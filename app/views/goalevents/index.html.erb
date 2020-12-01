@@ -13,6 +13,8 @@
 
 		<%if goalevent.penalty? %>
 			(Penalty
+		<%elsif goalevent.autogoal? %>
+			(Autogoal
 		<%else%>
 			(<%= goalevent.eventtype.name.capitalize %>
 		<%end%>

@@ -29,7 +29,13 @@ class FixturesController < ApplicationController
 
 	def update
 		game = @fixture.update(fixture_params)
-		redirect_to new_goal_path(:fixture => params[:id])
+
+		if (params['fixture']['scorehome'].to_i+params['fixture']['scoreaway'].to_i)==0
+			redirect_to fixtures_path
+		else
+			redirect_to new_goal_path(:fixture => params[:id])
+		end
+		
 	end
 
 	private 

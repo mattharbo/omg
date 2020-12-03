@@ -1,16 +1,12 @@
-<small>
-	<strong>Fixtures#index</strong>
-</small>
-<br><br>
+<h2>Fixtures <mark>index</mark></h2>
+<br>
 
 <% @fixtures.each do |fixture| %>
-	<small>
 		(<%= fixture.id %>)
 		<%= fixture.date %> | 
 		<%= fixture.season.competition.name %>
 		-
-		<strong>Stage <%= fixture.stage %> •</strong> 
-	</small>
+		<mark>Stage <%= fixture.stage %></mark> • 
 
 	<%= fixture.hometeam.club.shortname %>
 	 <strong>
@@ -23,11 +19,11 @@
 
 	 <% if fixture.scorehome.nil? %>
 	 	<small>
-	 		<%= link_to "Update score", edit_fixture_path(fixture.id) %>
+	 		<%= link_to "Update score", edit_fixture_path(fixture.id), class: "gotolink" %>
 	 	</small>
 	 <% else %>
 	 	<small>
-			<%= link_to "LINK", fixture_path(fixture.id) %>
+			<%= link_to "Link", fixture_path(fixture.id), class: "gotolink" %>
 	 	</small>
 	 <% end %>
 

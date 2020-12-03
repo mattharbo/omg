@@ -1,7 +1,5 @@
-<small>
-	<strong>Fixtures#edit</strong>
-</small>
-<br><br>
+<h2>Fixtures <mark>edit</mark></h2>
+<br>
 
 <%= form_for @fixture do |f| %>
 	<%= f.label :scorehome, @fixture.hometeam.club.acronym %>
@@ -12,5 +10,5 @@
 
 	<%= f.hidden_field :status, :value => 'played' %>
 
-	<%= f.submit 'Update score' %>
+	<%= f.submit 'Update score', class: "primary-btn" %>
 <% end %>

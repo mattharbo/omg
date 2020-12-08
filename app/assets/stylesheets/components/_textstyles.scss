@@ -8,17 +8,22 @@ h2{
 }
 
 mark{
-	background-color:$green;
+	background-color:$flash-green;
 }
 
 .highlight{
 	font-size:13px;
-	font-weight: 700;
-	color:$green;
+	font-weight:700;
+	color:$flash-green;
 }
 
 .secondary-text{
 	font-size:13px;
 	font-weight:400;
 	color:$grey;
+}
+
+.purple-text{
+	font-size:13px;
+	color:$purple;
 }

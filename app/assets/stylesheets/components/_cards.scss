@@ -1,0 +1,51 @@
+@import "components/colors";
+
+.scorecard{
+	display: flex;
+	justify-content:space-between;
+	align-items: center;
+	-webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.08); 
+	box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.08);
+	border-radius: 4px;
+	color:$black-blue;
+	font-weight:700;
+	margin-bottom:15px;
+}
+.scorecard:hover{
+	-webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.2); 
+	box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.2);
+}
+
+.scorecard-time{
+	text-align:center;
+	font-size:11px;
+	color:$grey;
+	margin:0 28px;
+	font-weight:400;
+}
+
+.scheduled{
+	color:$black-blue;
+}
+
+.scorecard-time p, .scorecard-teams p, .scorecard-info p{
+   margin:0px;
+ }
+
+.scorecard-teams{
+	flex-grow: 1;
+	margin:16px 0;
+}
+
+.scorecard-teams .team-sep{
+	padding-bottom:5px;
+}
+
+.scorecard-info{
+	margin-right:30px;
+	text-align:center;
+}
+
+.scorecard-info .score{
+	font-size:16px;
+}

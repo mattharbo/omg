@@ -18,6 +18,7 @@
 @import "components/colors";
 @import "components/buttons";
 @import "components/textstyles";
+@import "components/cards";
 
 @font-face {
    font-family: "avenir_next";
@@ -35,4 +36,9 @@
    margin:0;
    height: 100vh;
    color:$black-blue;
+ }
+
+ .container{
+   margin:0 auto;
+   width:600px;
  }

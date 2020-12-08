@@ -1,90 +1,96 @@
-<h2>Final score</h2>
+<div class="fixtureshow-bg">
 
-<center>
-<br>
 
-<%= @fixture.season.competition.name %> • Stage <%= @fixture.stage %>
-<!-- | Saison <%= @fixture.season.startyear %> -->
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<%= @fixture.date %>
+		<center>
+		<br>
 
-<br><br>
+		<%= @fixture.season.competition.name %> • Stage <%= @fixture.stage %>
+		<!-- | Saison <%= @fixture.season.startyear %> -->
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<%= @fixture.date %>
 
-<h2>
-	<%= @fixture.hometeam.club.shortname %>
-	&nbsp;&nbsp;&nbsp;&nbsp;
-	<%= @fixture.scorehome %>
-	 - 
-	<%= @fixture.scoreaway %>
-	&nbsp;&nbsp;&nbsp;&nbsp;
-	<%= @fixture.awayteam.club.shortname %>
-</h2>
+		<br><br>
 
-<br>
+		<h2>
+			<%= @fixture.hometeam.club.shortname %>
+			&nbsp;&nbsp;&nbsp;&nbsp;
+			<%= @fixture.scorehome %>
+			 - 
+			<%= @fixture.scoreaway %>
+			&nbsp;&nbsp;&nbsp;&nbsp;
+			<%= @fixture.awayteam.club.shortname %>
+		</h2>
 
-<%if @fixture.scorehome.to_i+@fixture.scoreaway.to_i > 0%>
-	<%if @goals.count != @fixture.scorehome.to_i+@fixture.scoreaway.to_i%>
-		<i>
-			Scorers are missing
-		</i>
-	<%else%>
-		<% @goals.each do |goal| %>
-			<% if goal.goal.team.id == @fixture.hometeam.id %>
-				<small>
-					<%= goal.player.forename %>
-					<strong>
-						<%= goal.player.name %>
-					</strong>
-					<% if goal.penalty? %>
+		<br>
+
+		<%if @fixture.scorehome.to_i+@fixture.scoreaway.to_i > 0%>
+			<%if @goals.count != @fixture.scorehome.to_i+@fixture.scoreaway.to_i%>
+				<i>
+					Scorers are missing
+				</i>
+			<%else%>
+				<% @goals.each do |goal| %>
+					<% if goal.goal.team.id == @fixture.hometeam.id %>
 						<small>
-							(PEN)
+							<%= goal.player.forename %>
+							<strong>
+								<%= goal.player.name %>
+							</strong>
+							<% if goal.penalty? %>
+								<small>
+									(PEN)
+								</small>
+							<% elsif goal.autogoal? %>
+								<small>
+									(OG)
+								</small>
+							<%end%>
+							<%= goal.goal.minute %>'
 						</small>
-					<% elsif goal.autogoal? %>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						&nbsp;
+
+						<br>
+
+					<% else %>
+
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						&nbsp;
+
 						<small>
-							(OG)
+							<%= goal.goal.minute %>'
+
+							<% if goal.penalty? %>
+								<small>
+									(PEN)
+								</small>
+							<% elsif goal.autogoal? %>
+								<small>
+									(OG)
+								</small>
+							<%end%>
+							
+							<%= goal.player.forename %>
+							<strong>
+								<%= goal.player.name %>
+							</strong>
 						</small>
+						<br>
+
 					<%end%>
-					<%= goal.goal.minute %>'
-				</small>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-				&nbsp;
-
-				<br>
-
-			<% else %>
-
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-				&nbsp;
-
-				<small>
-					<%= goal.goal.minute %>'
-
-					<% if goal.penalty? %>
-						<small>
-							(PEN)
-						</small>
-					<% elsif goal.autogoal? %>
-						<small>
-							(OG)
-						</small>
-					<%end%>
-					
-					<%= goal.player.forename %>
-					<strong>
-						<%= goal.player.name %>
-					</strong>
-				</small>
-				<br>
-
+				<%end%>
 			<%end%>
 		<%end%>
-	<%end%>
-<%end%>
 
-</center>
+		</center>
+
+
+
+
+</div>

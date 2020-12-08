@@ -1,31 +1,58 @@
 <h2>Fixtures <mark>index</mark></h2>
 <br>
 
+<div class="container"></div>
+
 <% @fixtures.each do |fixture| %>
-		(<%= fixture.id %>)
-		<%= fixture.date %> | 
-		<%= fixture.season.competition.name %>
-		-
-		<mark>Stage <%= fixture.stage %></mark> • 
 
-	<%= fixture.hometeam.club.shortname %>
-	 <strong>
-	 	<%= fixture.scorehome %> - <%= fixture.scoreaway %>
-	 </strong>
-	 <%= fixture.awayteam.club.shortname %>
-	 <small>
-	 | <%= fixture.time %></small>
+	<!-- <small>
+		Stage <%= fixture.stage %> (id <%= fixture.id %>)
+	</small> -->
 
 
-	 <% if fixture.scorehome.nil? %>
-	 	<small>
-	 		<%= link_to "Update score", edit_fixture_path(fixture.id), class: "gotolink" %>
-	 	</small>
-	 <% else %>
-	 	<small>
-			<%= link_to "Link", fixture_path(fixture.id), class: "gotolink" %>
-	 	</small>
-	 <% end %>
+	<% if fixture.scorehome.nil? %>
 
-	<br>
+		<%= link_to edit_fixture_path(fixture.id), {class:"nodecoration"} do%>
+			
+			<div class="scorecard">
+				<div class="scorecard-time">
+					<p><%= fixture.date %></p>
+					<p><%= fixture.time %></p>
+				</div>
+				<div class="scorecard-teams">
+					<p class="team-sep"><%= fixture.hometeam.club.shortname %></p>
+					<p><%= fixture.awayteam.club.shortname %></p>
+				</div>
+				<div class="scorecard-info">
+					<p class="highlight">Update</p>
+				</div>
+			</div>
+
+		<%end%>
+
+	<% else %>
+
+		<%= link_to fixture_path(fixture.id), {class:"nodecoration"} do%>
+			
+			<div class="scorecard">
+				<div class="scorecard-time">
+					<p><%= fixture.date %></p>
+					<p><%= fixture.time %></p>
+				</div>
+				<div class="scorecard-teams">
+					<p class="team-sep"><%= fixture.hometeam.club.shortname %></p>
+					<p><%= fixture.awayteam.club.shortname %></p>
+				</div>
+				<div class="scorecard-info">
+					<p class="score"><%= fixture.scorehome %></p>
+					<p class="score"><%= fixture.scoreaway %></p>
+				</div>
+			</div>
+
+		<%end%>
+
+
+	<% end %>
+
+
 <% end %>

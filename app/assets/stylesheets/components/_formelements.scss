@@ -1,0 +1,40 @@
+@import "components/colors";
+
+.form-container{
+	width:300px;
+	margin:0 auto;
+}
+
+.score-edit-form{
+	display: flex;
+	justify-content:space-evenly;
+	align-items: center;
+}
+
+.scoreinput{
+	background-color:$white;
+	border-radius: 9px;
+	width:100px;
+	height:100px;
+	border:1px solid $light-grey;
+	color:$purple;
+	font-size:60px;
+	text-align:center;
+	font-family: 'avenir_next', sans-serif;
+}
+.scoreinput:focus{
+	color:$purple;
+	font-size:60px;
+	text-align:center;
+}
+
+.form-input{
+	background-color:$white;
+	border-radius: 4px;
+	height:30px;
+	border:1px solid $light-grey;
+}
+
+.nested_fields{
+	border:none;
+}

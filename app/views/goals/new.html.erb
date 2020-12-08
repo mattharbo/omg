@@ -23,18 +23,18 @@
 
         <br><br>
 
-        <%= g.text_field :minute %>
+        <%= g.text_field :minute, class: 'form-input' %>
         <%= g.label :minute, "Min" %>
 
         <br><br>
         
         <%= e.label :enddepth, "xCoord" %> 
-        <%= e.text_field :enddepth %>
+        <%= e.text_field :enddepth, class: 'form-input' %>
 
         <br>
 
         <%= e.label :endwidth, "yCoord" %> 
-        <%= e.text_field :endwidth %>
+        <%= e.text_field :endwidth, class: 'form-input' %>
 
         <br><br>
 
@@ -46,7 +46,7 @@
 
 
     <br><br>
-    <%= g.submit 'Create goal' %>
+    <%= g.submit 'Create goal', class: "primary-btn margin-top" %>
 
 <%end%>
 

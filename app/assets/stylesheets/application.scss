@@ -19,6 +19,7 @@
 @import "components/buttons";
 @import "components/textstyles";
 @import "components/cards";
+@import "components/formelements";
 
 @font-face {
    font-family: "avenir_next";
@@ -41,4 +42,15 @@
  .container{
    margin:0 auto;
    width:600px;
+ }
+
+
+//i should put select as well
+input {
+    border:none;
+    background-image:none;
+    background-color:transparent;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
  }

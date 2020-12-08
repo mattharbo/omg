@@ -5,10 +5,11 @@
 	margin:0 auto;
 }
 
-.score-edit-form{
+.edit_fixture{
 	display: flex;
 	justify-content:space-evenly;
 	align-items: center;
+	flex-wrap: wrap;
 }
 
 .scoreinput{

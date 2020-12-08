@@ -3,9 +3,7 @@
 
 <div class="form-container">
 
-<div>
-
-	<%= form_for @fixture, html: {class: 'score-edit-form'} do |f| %>
+	<%= form_for @fixture do |f| %>
 	
 		<div>
 			<%= f.text_field :scorehome, class: 'scoreinput' %>
@@ -23,10 +21,8 @@
 
 		<%= f.hidden_field :status, :value => 'played' %>
 
-</div>
+		<%= f.submit 'Update score', class: "primary-btn margin-top" %>
 
-<%= f.submit 'Update score', class: "primary-btn margin-top" %>
-
-<% end %>
+	<% end %>
 
 </div>

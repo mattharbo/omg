@@ -35,10 +35,10 @@ class GoalsController < ApplicationController
 			Goalevent.create(
 				goal:Goal.last,
 				player:player,
-				# startdepth:eventattribute['startdepth'],
-				# startwidth:eventattribute['startwidth'],
-				enddepth:eventattribute['enddepth'],
-				endwidth:eventattribute['endwidth'],
+				startdepth:eventattribute['startdepth'],
+				startwidth:eventattribute['startwidth'],
+				# enddepth:eventattribute['startdepth'],
+				# endwidth:eventattribute['startwidth'],
 				eventtype:Eventtype.find(1),
 				# if eventtype is 1 then assist is 0
 				assist:0,

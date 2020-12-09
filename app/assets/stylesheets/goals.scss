@@ -15,11 +15,11 @@
 }
 
 .pointer{
-	width:9px;
-	height:9px;
+	width:10px;
+	height:10px;
 	border-radius:50%;
-	background-color:$flash-green;
-	border:1px solid $black-blue;
+	background-color:$white;
+	border:2px solid $flash-green;
 	position:absolute;
 	z-index:1;
 }

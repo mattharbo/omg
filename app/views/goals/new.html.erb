@@ -26,17 +26,16 @@
         <%= g.text_field :minute, class: 'form-input' %>
         <%= g.label :minute, "Min" %>
 
-        <br><br>
-        
-        <%= e.label :enddepth, "yCoord" %> 
-        <%= e.text_field :enddepth, class: 'form-input' %>
+        <br>
+
+        <%= e.hidden_field :startdepth %>
+        <%= e.hidden_field :startwidth %>
 
         <br>
 
-        <%= e.label :endwidth, "xCoord" %> 
-        <%= e.text_field :endwidth, class: 'form-input' %>
-
-        <br><br>
+        <div class="goalcoords">
+            <small>Goal coords: </small>
+        </div>
 
         <div class="pitchsvgcontainer">
             <%= svg 'pitch' %>

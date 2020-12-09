@@ -28,24 +28,30 @@
 
         <br><br>
         
-        <%= e.label :enddepth, "xCoord" %> 
+        <%= e.label :enddepth, "yCoord" %> 
         <%= e.text_field :enddepth, class: 'form-input' %>
 
         <br>
 
-        <%= e.label :endwidth, "yCoord" %> 
+        <%= e.label :endwidth, "xCoord" %> 
         <%= e.text_field :endwidth, class: 'form-input' %>
 
         <br><br>
+
+        <div class="pitchsvgcontainer">
+            <%= svg 'pitch' %>
+        </div>
+
+        <div id="pitch" class="pitch">
+        </div>
+        
+        <br>
 
         <%= label :penalty, "Penalty", value: false %>
         <%= e.radio_button :penalty, true, :value => true%>
 
     <% end %>
 
-
-
-    <br><br>
     <%= g.submit 'Create goal', class: "primary-btn margin-top" %>
 
 <%end%>

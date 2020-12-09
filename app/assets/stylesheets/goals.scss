@@ -14,12 +14,21 @@
 	position:relative;
 }
 
-.pointer{
+.pointer_start{
 	width:10px;
 	height:10px;
 	border-radius:50%;
 	background-color:$white;
 	border:2px solid $flash-green;
+	position:absolute;
+	z-index:1;
+}
+
+.pointer_end{
+	width:6px;
+	height:6px;
+	border-radius:50%;
+	background-color:$flash-green;
 	position:absolute;
 	z-index:1;
 }

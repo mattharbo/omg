@@ -37,8 +37,8 @@ class GoalsController < ApplicationController
 				player:player,
 				startdepth:eventattribute['startdepth'],
 				startwidth:eventattribute['startwidth'],
-				# enddepth:eventattribute['startdepth'],
-				# endwidth:eventattribute['startwidth'],
+				enddepth:eventattribute['enddepth'],
+				endwidth:eventattribute['endwidth'],
 				eventtype:Eventtype.find(1),
 				# if eventtype is 1 then assist is 0
 				assist:0,

@@ -31,10 +31,14 @@
         <%= e.hidden_field :startdepth %>
         <%= e.hidden_field :startwidth %>
 
+        <%= e.hidden_field :enddepth %>
+        <%= e.hidden_field :endwidth %>
+
         <br>
 
         <div class="goalcoords">
-            <small>Goal coords: </small>
+            <small>Goal start coords: </small><br>
+            <small>Goal end coords: </small>
         </div>
 
         <div class="pitchsvgcontainer">
@@ -56,6 +60,12 @@
 <%end%>
 
 <br>
+<input type="radio" id="startgoal" name="goal" checked>
+<label for="startgoal">Start point</label>
+<input type="radio" id="endgoal" name="goal" >
+<label for="endgoal">End point</label>
+
+<br><br>
 
 <% unless @savedgoals.nil? %>
 	<% @savedgoals.each do |b| %>

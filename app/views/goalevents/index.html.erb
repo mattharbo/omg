@@ -19,9 +19,14 @@
 		
 		 at <%= goalevent.goal.minute %>')
 		| 
-		Start: <%= goalevent.startdepth %>/<%= goalevent.startwidth %>
+		Start: 
+		<strong><%= goalevent.startdepth %>/<%= goalevent.startwidth %></strong>
 		•
-		End: <%= goalevent.enddepth %>/<%= goalevent.endwidth %>
+		End:
+		<strong><%= goalevent.enddepth %>/<%= goalevent.endwidth %></strong>
+		•
+		Goal coords:
+		<strong><%= goalevent.goalxcoord %>/<%= goalevent.goalycoord %></strong>
 
 		|
 		#<%= goalevent.goal.fixture.hometeam.club.acronym %><%= goalevent.goal.fixture.awayteam.club.acronym %>

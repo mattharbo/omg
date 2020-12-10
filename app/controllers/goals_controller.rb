@@ -53,6 +53,8 @@ class GoalsController < ApplicationController
 				startwidth:eventattribute['startwidth'],
 				enddepth:eventattribute['enddepth'],
 				endwidth:eventattribute['endwidth'],
+				goalxcoord:eventattribute['goalxcoord'],
+				goalycoord:eventattribute['goalycoord'],
 				eventtype:Eventtype.find(1),
 				# if eventtype is 1 then assist is 0
 				assist:0,

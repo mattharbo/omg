@@ -33,22 +33,26 @@
 			<%else%>
 				<% @goals.each do |goal| %>
 					<% if goal.goal.team.id == @fixture.hometeam.id %>
-						<small>
-							<%= goal.player.forename %>
-							<strong>
-								<%= goal.player.name %>
-							</strong>
-							<% if goal.penalty? %>
-								<small>
-									(PEN)
-								</small>
-							<% elsif goal.autogoal? %>
-								<small>
-									(OG)
-								</small>
-							<%end%>
-							<%= goal.goal.minute %>'
-						</small>
+
+						<%= link_to goal_path(goal.goal) do%>
+							<small>
+								<%= goal.player.forename %>
+								<strong>
+									<%= goal.player.name %>
+								</strong>
+								<% if goal.penalty? %>
+									<small>
+										(PEN)
+									</small>
+								<% elsif goal.autogoal? %>
+									<small>
+										(OG)
+									</small>
+								<%end%>
+								<%= goal.goal.minute %>'
+							</small>
+						<%end%>
+
 						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -63,24 +67,28 @@
 						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 						&nbsp;
 
-						<small>
-							<%= goal.goal.minute %>'
+						
+						<%= link_to goal_path(goal.goal) do%>
+							<small>
+								<%= goal.goal.minute %>'
 
-							<% if goal.penalty? %>
-								<small>
-									(PEN)
-								</small>
-							<% elsif goal.autogoal? %>
-								<small>
-									(OG)
-								</small>
-							<%end%>
-							
-							<%= goal.player.forename %>
-							<strong>
-								<%= goal.player.name %>
-							</strong>
-						</small>
+								<% if goal.penalty? %>
+									<small>
+										(PEN)
+									</small>
+								<% elsif goal.autogoal? %>
+									<small>
+										(OG)
+									</small>
+								<%end%>
+								
+								<%= goal.player.forename %>
+								<strong>
+									<%= goal.player.name %>
+								</strong>
+							</small>
+						<%end%>
+
 						<br>
 
 					<%end%>

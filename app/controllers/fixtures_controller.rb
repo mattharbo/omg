@@ -16,7 +16,7 @@ class FixturesController < ApplicationController
 			goalscored = Goalevent.where(goal:goal.id)
 
 			unless goalscored.empty?
-			  if Goalevent.where(goal:goal.id).take.eventtype.name="goal"
+			  if goalscored.take.eventtype.name="goal"
 					@goals << Goalevent.where(goal:goal.id).take	
 				end
 			end

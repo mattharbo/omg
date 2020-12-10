@@ -1,4 +1,4 @@
-<h2>Fixtures <mark>new</mark></h2>
+<h2>Goal <mark>new</mark></h2>
 <br>
 
 <%= form_for @goal do |g| %>
@@ -36,15 +36,18 @@
 
         <br>
 
-        <div class="goalcoords">
-            <small>Goal start coords: </small><br>
-            <small>Goal end coords: </small>
+        <div id="cagemaincontainer">
+
+            <div class="cagesvgcontainer">
+                <%= svg 'cage' %>
+            </div>
+            <div id="thecage" class="cage">
+            </div>
         </div>
 
         <div class="pitchsvgcontainer">
             <%= svg 'pitch' %>
         </div>
-
         <div id="pitch" class="pitch">
         </div>
         
@@ -58,12 +61,6 @@
     <%= g.submit 'Create goal', class: "primary-btn margin-top" %>
 
 <%end%>
-
-<br>
-<input type="radio" id="startgoal" name="goal" checked>
-<label for="startgoal">Start point</label>
-<input type="radio" id="endgoal" name="goal" >
-<label for="endgoal">End point</label>
 
 <br><br>
 

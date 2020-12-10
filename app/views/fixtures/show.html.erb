@@ -34,7 +34,7 @@
 				<% @goals.each do |goal| %>
 					<% if goal.goal.team.id == @fixture.hometeam.id %>
 
-						<%= link_to goal_path(goal.goal) do%>
+						<%= link_to goal_path(goal.goal), class:"gotolink"  do%>
 							<small>
 								<%= goal.player.forename %>
 								<strong>
@@ -68,7 +68,7 @@
 						&nbsp;
 
 						
-						<%= link_to goal_path(goal.goal) do%>
+						<%= link_to goal_path(goal.goal), class:"gotolink"  do%>
 							<small>
 								<%= goal.goal.minute %>'
 

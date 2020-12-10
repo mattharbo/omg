@@ -4,6 +4,22 @@
 
 @import "components/colors";
 
+#cagemaincontainer{
+	margin-bottom:50px;
+}
+
+.cagesvgcontainer{
+	position:absolute;
+}
+
+.cage{
+	width:192px;
+	height:59px;
+	left:29px;
+	top:4px;
+	position:relative;
+}
+
 .pitchsvgcontainer{
 	position:absolute;
 }
@@ -29,6 +45,15 @@
 	height:6px;
 	border-radius:50%;
 	background-color:$flash-green;
+	position:absolute;
+	z-index:1;
+}
+
+.pointer_goal{
+	width:10px;
+	height:10px;
+	border-radius:50%;
+	background-color:$purple;
 	position:absolute;
 	z-index:1;
 }

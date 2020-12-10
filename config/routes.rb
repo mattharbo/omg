@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   resources :fixtures, only:[:index,:show,:edit,:update]
   # get '/game/:id', to: 'fixtures#show'
   resources :eventtypes, only:[:index]
-  resources :goals, only:[:index,:new,:create]
+  resources :goals, only:[:index,:new,:create,:show]
   resources :goalevents, only:[:index]
   
 end

@@ -1,0 +1,46 @@
+<h2>Goal <mark>show</mark></h2>
+<br>
+
+
+<strong>
+<%=@scorer.name%> 
+</strong> scored
+for <%=@goal.team.club.shortname%> 
+at <%=@goal.minute%> min
+
+<br>
+
+during the 
+<strong>#<%=@goal.fixture.hometeam.club.acronym%><%=@goal.fixture.awayteam.club.acronym%></strong> game
+(Final score: <%=@goal.fixture.scorehome%>-<%=@goal.fixture.scoreaway%>)
+
+<br>
+on <strong><%=@goal.fixture.date%></strong>
+
+<br>
+during the <strong>game <%=@goal.fixture.stage%></strong>
+of <strong><%=@goal.fixture.season.competition.name%></strong>
+
+
+<ul>
+
+	<%@goalevents.each do |event|%>
+		<li>
+			Start position = <%=event.startwidth%>px/<%=event.startdepth%>px
+		</li>
+		<li>
+			End position = <%=event.endwidth%>px/<%=event.enddepth%>px
+		</li>
+		<li>	
+			Eventtype = <%=event.eventtype.name%>
+		</li>
+		<li>	
+			Assist = <%=event.assist%>
+		</li>
+		<li>	
+			Player = <%=event.player.name%>
+		</li>
+		<br>
+	<%end%>
+
+</ul>

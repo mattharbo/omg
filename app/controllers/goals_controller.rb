@@ -5,6 +5,20 @@ class GoalsController < ApplicationController
 		@goals=Goal.all
 	end
 
+	def show
+		@goal=Goal.find(params[:id])
+
+		@goalevents=Goalevent.where(goal:@goal.id)
+
+		@goalevents.each do |goalevent|
+			# assist=0 is a goal
+			if goalevent.assist = 0
+				@scorer=Player.find(goalevent.player.id)
+				# Do something with OG & Penalty					
+			end
+		end
+	end
+
 	def new
 		@savedgoals=Goal.where(fixture:params[:fixture])
 		@passed_fixture = Fixture.find(params[:fixture])

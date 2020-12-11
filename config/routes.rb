@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   root :to => "pages#menu"
   get '/designsystem/', to: 'pages#designsystem'
+  get '/goaltemplate/', to: 'pages#goaltemplate'
   resources :competitions, only:[:index]
   resources :clubs, only:[:index]
   resources :teams, only:[:index]

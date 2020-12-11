@@ -4,4 +4,7 @@ class PagesController < ApplicationController
 
   def designsystem
   end
+
+  def goaltemplate
+  end
 end

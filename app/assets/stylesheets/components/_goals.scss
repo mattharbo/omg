@@ -1,0 +1,92 @@
+@import "components/colors";
+
+.goalcontainer{
+	height:100vh;
+	display:flex;
+	align-content:center;
+	align-items:center;
+	margin:0 30px;
+}
+
+.goalcard{
+	-webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.08); 
+	box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.08);
+	border-radius:10px;
+	width:100%;
+	order:1;
+}
+
+.goalcard-header{
+	display:flex;
+	align-content:center;
+	justify-content:space-between;
+}
+
+.goalcard-header-scoreravatar{
+	width:28px;
+	height:28px;
+	border-radius:50%;
+	margin:15px 0 0 20px;
+	order:1;
+}
+
+.goalcard-header-scorerinfo{
+	order:2;
+	flex-grow:2;
+	margin: 16px 0 0 15px;
+}
+
+.goalcard-header-scorerinfo p{
+	margin:0;
+}
+
+.goalcard-header-scorerinfo .scorer{
+	color:$black-blue;
+	font-family: 'avenir_next', sans-serif;
+	font-size:20px;
+	letter-spacing:-0.6px;
+}
+
+.goalcard-header-scorerinfo .game-info{
+	color:$grey;
+	font-size:12px;
+	margin:0;
+}
+
+.share-btn{
+	order:3;
+	width:40px;
+	height:40px;
+	border-radius:50%;
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	margin:10px 10px 0 0;
+}
+
+.share-btn:hover{
+	background-color:$light-grey;
+	cursor:pointer;
+}
+
+
+.goalcard-content{
+	display:flex;
+	justify-content:center;
+	margin-top:26px;
+}
+
+.goalcard-footer{
+	text-align:center;
+	padding:9px 0 20px 0;
+}
+
+.goalcard-footer p{
+	margin:0;
+	color:$grey;
+	font-size:12px;
+}
+
+.goalcard-footer .stage{
+	font-weight:600;
+}

@@ -1,26 +1,42 @@
-<h2>Goal <mark>show</mark></h2>
+<div class="goalcontainer">
+
+	<div class="goalcard">
+
+		<div class="goalcard-header">
+			<%=image_tag("beckham.jpg", class: "goalcard-header-scoreravatar")%>
+			<div class="goalcard-header-scorerinfo">
+				<p class="scorer"><%=@scorer.forename%>
+				 <%=@scorer.name%>
+				 <small>
+				 (<%=@goal.team.club.acronym%>)
+				 </small>
+				</p>
+				<p class="game-info"><%=@goal.fixture.scorehome%>-<%=@goal.fixture.scoreaway%> (<%=@goal.minute%>') <%=@goal.fixture.hometeam.club.shortname%> v <%=@goal.fixture.awayteam.club.shortname%></p>
+			</div>
+			<div class="share-btn">
+				<%= svg 'share-btn' %>
+			</div>
+		</div>
+
+		<div class="goalcard-content">
+			<%= svg 'pitch' %>
+		</div>
+		
+		<div class="goalcard-footer">
+			<p class="stage"><%=@goal.fixture.season.competition.name%> • Day <%=@goal.fixture.stage%></p>
+			<p><%=@goal.fixture.date%></p>
+		</div>
+
+	</div>
+
+</div>
+
+
+
+
+
+
 <br>
-
-
-<strong>
-<%=@scorer.name%> 
-</strong> scored
-for <%=@goal.team.club.shortname%> 
-at <%=@goal.minute%> min
-
-<br>
-
-during the 
-<strong>#<%=@goal.fixture.hometeam.club.acronym%><%=@goal.fixture.awayteam.club.acronym%></strong> game
-(Final score: <%=@goal.fixture.scorehome%>-<%=@goal.fixture.scoreaway%>)
-
-<br>
-on <strong><%=@goal.fixture.date%></strong>
-
-<br>
-during the <strong>game <%=@goal.fixture.stage%></strong>
-of <strong><%=@goal.fixture.season.competition.name%></strong>
-
 
 <ul>
 

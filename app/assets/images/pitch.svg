@@ -5,24 +5,24 @@
     <desc>Created with Sketch.</desc>
     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
         <g id="Artboard" transform="translate(-365.000000, -1351.000000)">
-            <g id="Group" transform="translate(0.000000, 1322.000000)">
-                <g id="Field" transform="translate(365.000000, 29.000000)">
-                    <rect id="Main-lines" stroke="#E2E2E2" stroke-width="4" x="2" y="3" width="346" height="509" rx="2"></rect>
-                    <g id="Surface-bottom" transform="translate(81.000000, 416.000000)">
+            <g id="xxx" transform="translate(0.000000, 1322.000000)">
+                <g id="Field" transform="translate(365.000000, 28.000000)">
+                    <rect id="Main-lines" stroke="#E2E2E2" stroke-width="4" x="2" y="4" width="346" height="509" rx="2"></rect>
+                    <g id="Surface-bottom" transform="translate(81.000000, 417.000000)">
                         <path d="M129.236063,76.0240701 L129.817935,75.0487958 L130.95361,75.0487805 L186,75.0487805 L186,2.04878049 L2,2.04878049 L2.00000056,75.0487805 L58.1820648,75.0487961 L58.7639374,76.0240701 C66.1145642,88.3444223 79.3887303,96.0487805 94,96.0487805 C108.61127,96.0487805 121.885436,88.3444223 129.236063,76.0240701 Z" id="Combined-Shape" stroke="#E2E2E2" stroke-width="4" transform="translate(94.000000, 49.048780) rotate(180.000000) translate(-94.000000, -49.048780) "></path>
                         <rect id="Rectangle" stroke="#E2E2E2" stroke-width="4" x="54" y="74" width="81" height="22" rx="2"></rect>
                         <circle id="Oval" fill="#E2E2E2" cx="95" cy="43" r="3"></circle>
                         <rect id="Rectangle" fill="#C1C1C1" x="78" y="94" width="34" height="4" rx="2"></rect>
-                        <rect id="Rectangle" fill="#D2D2D2" x="78" y="94" width="34" height="4" rx="2"></rect>
+                        <rect id="Rectangle" fill="#DADADA" x="78" y="93" width="34" height="6" rx="1"></rect>
                     </g>
-                    <g id="Surface-top" transform="translate(175.000000, 49.500000) scale(1, -1) translate(-175.000000, -49.500000) translate(81.000000, 0.000000)">
+                    <g id="Surface-top" transform="translate(175.000000, 50.000000) scale(1, -1) translate(-175.000000, -50.000000) translate(81.000000, 0.000000)">
                         <path d="M129.236063,76.0240701 L129.817935,75.0487958 L130.95361,75.0487805 L186,75.0487805 L186,2.04878049 L2,2.04878049 L2.00000056,75.0487805 L58.1820648,75.0487961 L58.7639374,76.0240701 C66.1145642,88.3444223 79.3887303,96.0487805 94,96.0487805 C108.61127,96.0487805 121.885436,88.3444223 129.236063,76.0240701 Z" id="Combined-Shape" stroke="#E2E2E2" stroke-width="4" transform="translate(94.000000, 49.048780) rotate(180.000000) translate(-94.000000, -49.048780) "></path>
                         <rect id="Rectangle" stroke="#E2E2E2" stroke-width="4" x="54" y="74" width="81" height="22" rx="2"></rect>
                         <circle id="Oval" fill="#E2E2E2" cx="95" cy="43" r="3"></circle>
                         <rect id="Rectangle" fill="#C1C1C1" x="78" y="94" width="34" height="4" rx="2"></rect>
-                        <rect id="Rectangle" fill="#D2D2D2" x="78" y="94" width="34" height="4" rx="2"></rect>
+                        <rect id="Rectangle" fill="#DADADA" x="78" y="93" width="34" height="6" rx="1"></rect>
                     </g>
-                    <g id="Group-2" transform="translate(3.000000, 215.000000)">
+                    <g id="Group-2" transform="translate(3.000000, 216.000000)">
                         <rect id="Rectangle" fill="#E2E2E2" x="0" y="41" width="129" height="4"></rect>
                         <rect id="Rectangle" fill="#E2E2E2" x="215" y="41" width="131" height="4"></rect>
                         <circle id="Oval" fill="#E2E2E2" cx="172" cy="43" r="3"></circle>

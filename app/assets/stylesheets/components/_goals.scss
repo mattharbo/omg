@@ -14,6 +14,7 @@
 	border-radius:10px;
 	width:100%;
 	order:1;
+	background-color:$white;
 }
 
 .goalcard-header{
@@ -23,17 +24,18 @@
 }
 
 .goalcard-header-scoreravatar{
-	width:28px;
-	height:28px;
+
+	width:40px;
+	height:40px;
 	border-radius:50%;
-	margin:15px 0 0 20px;
+	margin:15px 0 0 15px;
 	order:1;
 }
 
 .goalcard-header-scorerinfo{
 	order:2;
 	flex-grow:2;
-	margin: 16px 0 0 15px;
+	margin: 15px 0 0 15px;
 }
 
 .goalcard-header-scorerinfo p{
@@ -45,6 +47,15 @@
 	font-family: 'avenir_next', sans-serif;
 	font-size:20px;
 	letter-spacing:-0.6px;
+}
+
+.goalcard-header-scorerinfo .scorer a{
+	color:$purple;
+	text-decoration:none;
+}
+
+.goalcard-header-scorerinfo .scorer small{
+	font-size:12px;
 }
 
 .goalcard-header-scorerinfo .game-info{
@@ -61,14 +72,13 @@
 	display:flex;
 	justify-content:center;
 	align-items:center;
-	margin:10px 10px 0 0;
+	margin:15px 15px 0 0;
 }
 
 .share-btn:hover{
-	background-color:$light-grey;
+	background-color:$light-purple;
 	cursor:pointer;
 }
-
 
 .goalcard-content{
 	display:flex;

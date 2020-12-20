@@ -5,10 +5,13 @@
 		<div class="goalcard-header">
 			<%=image_tag("beckham.jpg", class: "goalcard-header-scoreravatar")%>
 			<div class="goalcard-header-scorerinfo">
-				<p class="scorer"><%=@scorer.forename%>
-				 <%=@scorer.name%>
+				<p class="scorer">
+					<!-- TO BE REPLACED BY A HELPER LATER ON! -->
+					<a href="">
+					<%=@scorer.forename%> <%=@scorer.name%>
+					</a>
 				 <small>
-				 (<%=@goal.team.club.acronym%>)
+				 | <%=@goal.team.club.acronym%>
 				 </small>
 				</p>
 				<p class="game-info"><%=@goal.fixture.scorehome%>-<%=@goal.fixture.scoreaway%> (<%=@goal.minute%>') <%=@goal.fixture.hometeam.club.shortname%> v <%=@goal.fixture.awayteam.club.shortname%></p>
@@ -19,7 +22,17 @@
 		</div>
 
 		<div class="goalcard-content">
-			<%= svg 'pitch' %>
+
+			<div class="pitchsvgcontainer">
+            <%= svg 'pitch' %>
+	        </div>
+	        <div id="pitch" class="pitch">
+	        	<%@goalevents.each do |event|%>
+	        		<div class="pointer_start" style="left:<%=event.startwidth%>px;top:<%=event.startdepth%>px;"></div>
+	        		<div class="pointer_end" style="left:<%=event.endwidth%>px;top:0px;"></div>
+	        	<%end%>
+	        </div>
+			
 		</div>
 		
 		<div class="goalcard-footer">

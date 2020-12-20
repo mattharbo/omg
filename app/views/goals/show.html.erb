@@ -11,7 +11,7 @@
 					<%=@scorer.forename%> <%=@scorer.name%>
 					</a>
 				 <small>
-				 | <%=@goal.team.club.acronym%>
+				  (<%=@goal.team.club.acronym%>)
 				 </small>
 				</p>
 				<p class="game-info"><%=@goal.fixture.scorehome%>-<%=@goal.fixture.scoreaway%> (<%=@goal.minute%>') <%=@goal.fixture.hometeam.club.shortname%> v <%=@goal.fixture.awayteam.club.shortname%></p>
@@ -28,8 +28,18 @@
 	        </div>
 	        <div id="pitch" class="pitch">
 	        	<%@goalevents.each do |event|%>
-	        		<div class="pointer_start" style="left:<%=event.startwidth%>px;top:<%=event.startdepth%>px;"></div>
+
+	        		<div class="point_container" style="left:<%=event.startwidth%>px;top:<%=event.startdepth%>px;">
+		        		<div class="pointer_start" >
+		        		</div>
+		        		<div class="pointer_name">
+		        			<%=@scorer.name.upcase%>
+		        		</div>
+	        		</div>
+
 	        		<div class="pointer_end" style="left:<%=event.endwidth%>px;top:0px;"></div>
+
+
 	        	<%end%>
 	        </div>
 			

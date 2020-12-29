@@ -31,16 +31,17 @@
 
 				<%@goalevents.each do |event|%>
 
-	        		<div class="point_container" style="left:<%=event.startwidth-7%>px;top:<%=event.startdepth-10%>px;">
-		        		<div class="pointer_start" >
-		        		</div>
+	        		<div id="start" class="point_container" style="left:<%=event.startwidth-7%>px;top:<%=event.startdepth-10%>px;">
+		        		<div class="pointer_start"></div>
 		        		<div class="pointer_name">
 		        			<%=@scorer.name.upcase%>
 		        		</div>
 	        		</div>
 
-	        		<div class="pointer_end pointer_end_goals_show" style="left:<%=event.endwidth%>px;top:-1px;">
+	        		<div id="stop" class="pointer_end pointer_end_goals_show" style="left:<%=event.endwidth%>px;top:-1px;">
 	        		</div>
+
+	        		<connection from="#start" to="#stop" color="#00FE83" fromX="0.05" tail onlyVisible></connection>
 
 	        	<%end%>
 

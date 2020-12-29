@@ -3,7 +3,10 @@
 	<div class="goalcard">
 
 		<div class="goalcard-header">
-			<%=image_tag("beckham.jpg", class: "goalcard-header-scoreravatar")%>
+			<!-- <%=image_tag("beckham.jpg", class: "goalcard-header-scoreravatar")%> -->
+			<div class="goalcard-header-shirtavatar">
+				<%=@scorer.shirtnumber%>
+			</div>
 			<div class="goalcard-header-scorerinfo">
 				<p class="scorer">
 					<!-- TO BE REPLACED BY A HELPER LATER ON! -->
@@ -23,13 +26,12 @@
 
 		<div class="goalcard-content">
 
-			<div class="pitchsvgcontainer">
-            <%= svg 'pitch' %>
-	        </div>
-	        <div id="pitch" class="pitch">
-	        	<%@goalevents.each do |event|%>
+			<div class="goalcard-pitch">
 
-	        		<div class="point_container" style="left:<%=event.startwidth%>px;top:<%=event.startdepth%>px;">
+
+				<%@goalevents.each do |event|%>
+
+	        		<div class="point_container" style="left:<%=event.startwidth-7%>px;top:<%=event.startdepth-10%>px;">
 		        		<div class="pointer_start" >
 		        		</div>
 		        		<div class="pointer_name">
@@ -37,11 +39,13 @@
 		        		</div>
 	        		</div>
 
-	        		<div class="pointer_end" style="left:<%=event.endwidth%>px;top:0px;"></div>
-
+	        		<div class="pointer_end pointer_end_goals_show" style="left:<%=event.endwidth%>px;top:-1px;">
+	        		</div>
 
 	        	<%end%>
-	        </div>
+
+
+			</div>
 			
 		</div>
 		

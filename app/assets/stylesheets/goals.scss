@@ -36,7 +36,8 @@
 	justify-content:flex-start;
 	align-items:center;
 
-	width:150px;
+height:20px;
+width:130px;
 }
 
 .pointer_start{
@@ -46,6 +47,7 @@
 	background-color:$white;
 	border:2px solid $flash-green;
 	z-index:1;
+position:relative;
 }
 
 .pointer_name{
@@ -56,9 +58,9 @@
 	border-radius:4px;
 	padding:2px 6px;
 	margin-left:7px;
-white-space: nowrap;
-overflow: hidden;
-text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
 
 .pointer_end{
@@ -68,6 +70,10 @@ text-overflow: ellipsis;
 	background-color:$flash-green;
 	position:absolute;
 	z-index:1;
+}
+
+.pointer_end_goals_show{
+	position:absolute !important;
 }
 
 .pointer_goal{

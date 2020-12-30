@@ -25,7 +25,6 @@
 }
 
 .goalcard-header-scoreravatar{
-
 	width:40px;
 	height:40px;
 	border-radius:50%;
@@ -34,17 +33,20 @@
 }
 
 .goalcard-header-shirtavatar{
+	order:1;
+	
 	width:40px;
 	height:40px;
 	border-radius:50%;
 	margin:15px 0 0 15px;
-	order:1;
 	background-color:$light-grey;
-	display:flex;
-	justify-content:center;
-	align-items:center;
-	font-size:48px;
+
+	text-align:right;
+	
+	font-family: 'avenir_next', sans-serif;
+	font-size:37px;
 	font-weight:600;
+	letter-spacing: -0.1em;
 	color:$white;
 }
 

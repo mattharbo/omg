@@ -1,0 +1,85 @@
+<h2>Goalevents <mark>edit</mark></h2>
+<br>
+
+<div class="eventcontainer">
+	
+	<div class="formcontainer">
+
+		<div class="scorecard">
+			<div class="scorecard-time">
+				<p><%= @event.goal.fixture.date %></p>
+				<p><%= @event.goal.fixture.season.competition.name %></p>
+			</div>
+			<div class="scorecard-teams">
+				<p class="team-sep"><%= @event.goal.fixture.hometeam.club.shortname %></p>
+				<p><%= @event.goal.fixture.awayteam.club.shortname %></p>
+			</div>
+			<div class="scorecard-info">
+				<p class="score"><%= @event.goal.fixture.scorehome %></p>
+				<p class="score"><%= @event.goal.fixture.scoreaway %></p>
+			</div>
+		</div>
+
+		<br>
+		
+		<%= form_for @event do |f|%>
+
+			<%= f.label :player, "Player"%>
+			<small>(Init: <%=@event.player.name%>)</small>
+       		<%= f.select(:player,options_for_select(@players)) %>
+
+       		<br><br>
+
+       		<%= f.label :eventtype, "Type"%>
+			<small>(Init: <%=@event.eventtype.name%>)</small>
+       		<%= f.select(:eventtype,options_for_select(@types)) %>
+
+       		<br><br>
+
+       		<input type="radio" id="startradio" name="eventtype">
+  			<label for="startradio">Start</label>
+  			<input type="radio" id="endradio" name="eventtype">
+  			<label for="endradio">End</label>
+
+       		<%= f.hidden_field :startdepth %>
+	        <%= f.hidden_field :startwidth %>
+
+	        <%= f.hidden_field :enddepth %>
+	        <%= f.hidden_field :endwidth %>
+
+			<%= f.submit 'Update event', class: "primary-btn margin-top" %>
+
+		<%end%>
+
+	</div>
+
+
+	<div class="pitchcontainer">
+
+		<div class="pitchsvgcontainer">
+	        <%= svg 'pitch' %>
+	    </div>
+	    <div id="updatepitch" class="pitch">
+
+    		<div id="pointerstart" class="pointer_start" 
+    			style="left:<%=@event.startwidth-7%>px;
+    			top:<%=@event.startdepth-7%>px;">
+    		</div>
+    		<div id="pointerstop" class="pointer_end"
+    			style="left:<%=@event.endwidth%>px;top:0px;">
+    		</div>
+
+	    </div>
+
+	</div>
+
+</div>
+
+
+<br>
+
+End coords &/or
+Goal coords
+
+<%= javascript_pack_tag 'updategoalevents' %>
+<%= javascript_pack_tag 'domarrows' %>

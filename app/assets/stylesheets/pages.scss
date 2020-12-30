@@ -2,3 +2,46 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
+.record_header{
+	background-color:yellow;
+}
+
+.record_header_header{
+	display:flex;
+	justify-content:space-between;
+	background-color:pink;
+}
+
+.record_header_header p{
+	margin:0;
+}
+
+.record_header_teams{
+	display:flex;
+	
+	background-color:purple;
+}
+
+.record_content{
+	background-color:orange;
+}
+
+.timer{
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	align-content:center;
+}
+
+.reddot{
+	width:7px;
+	height:7px;
+	border-radius:50%;
+	background-color:red;
+	margin-right:6px !important;
+
+}
+
+.time{
+	margin-left:4px !important;
+}

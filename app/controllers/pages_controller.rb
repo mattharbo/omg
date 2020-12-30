@@ -7,4 +7,7 @@ class PagesController < ApplicationController
 
   def goaltemplate
   end
+
+  def recordtemplate
+  end
 end

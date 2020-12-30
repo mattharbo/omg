@@ -8,6 +8,8 @@ class GoalsController < ApplicationController
 	def show
 		@goal=Goal.find(params[:id])
 
+		@goal_date=display_date(@goal.fixture.date)
+
 		@goalevents=Goalevent.where(goal:@goal.id)
 
 		@goalevents.each do |goalevent|
@@ -82,5 +84,14 @@ class GoalsController < ApplicationController
 
 	def set_goal
 		@goal = Goal.find(params[:id])
+	end
+
+	def display_date(date)
+		# 2020-11-20 >> Oct. 23 2020
+		month=Date::ABBR_MONTHNAMES[date[/\-(.*?)-/,1].to_i]
+		year=date.strip[0,4]
+		day=date[date.rindex(/-/)+1,date.length]
+		newdate=month+". "+day+" "+year
+		return newdate
 	end
 end

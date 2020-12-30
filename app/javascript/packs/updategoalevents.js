@@ -1,15 +1,31 @@
-const pitch=document.getElementById("pitch");
-const cage=document.getElementById("thecage");
+const updatepitch=document.getElementById("updatepitch");
+
+// const cage=document.getElementById("thecage");
+
 
 //-------------------------
-const retrievecoords = (event) => {
+const updatecoords = (event) => {
 
-	pitch.innerHTML="";
-	document.getElementById("goal_goalevents_attributes_0_startwidth").value=event.offsetX;
-	document.getElementById("goal_goalevents_attributes_0_startdepth").value=event.offsetY;
+	const startradiostate=document.getElementById("startradio").checked;
+	const endradiostate=document.getElementById("endradio").checked;
 
-	pitch.insertAdjacentHTML("beforeend", `<div class="pointer_start" 
+	if (startradiostate===true) {
+		console.log("start => true");
+
+		var previousStartPointer=document.getElementById("pointerstart");
+		previousStartPointer.remove();
+
+		document.getElementById("goalevent_startdepth").value=event.offsetY;
+		document.getElementById("goalevent_startwidth").value=event.offsetX;
+
+		updatepitch.insertAdjacentHTML("beforeend", `<div id="pointerstart" class="pointer_start" 
 		style="top: ${event.offsetY-7}px;left: ${event.offsetX-7}px;"></div>`);
+	}else if (endradiostate===true) {
+		alert("Cage to come…")
+	}else{
+		alert("Start or end should be checked")
+	}
+
 };
 
 //-------------------------
@@ -33,8 +49,6 @@ const goallocation = (event) => {
 };
 
 //-------------------------
-pitch.addEventListener("click", retrievecoords);
-cage.addEventListener("click", goallocation);
+updatepitch.addEventListener("click", updatecoords);
 
-
-
+// cage.addEventListener("click", goallocation);

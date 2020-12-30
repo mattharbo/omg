@@ -28,23 +28,27 @@
 
 			<div class="goalcard-pitch">
 
-
 				<%@goalevents.each do |event|%>
 
-	        		<div id="start" class="point_container" style="left:<%=event.startwidth-7%>px;top:<%=event.startdepth-10%>px;">
-		        		<div class="pointer_start"></div>
-		        		<div class="pointer_name">
-		        			<%=@scorer.name.upcase%>
-		        		</div>
+					<div id="start" class="pointer_start" 
+					style="left:<%=event.startwidth-7%>px;
+					top:<%=event.startdepth-10%>px;">
+					</div>
+
+					<div class="pointer_name"
+					style="left:<%=event.startwidth+6%>px;
+					top:<%=event.startdepth-28%>px;">
+		        		<%=@scorer.name.upcase%>
+		        	</div>
+
+	        		<div id="stop" class="pointer_end pointer_end_goals_show" style="left:<%=event.endwidth%>px;top:-1px;visibility: hidden;">
 	        		</div>
 
-	        		<div id="stop" class="pointer_end pointer_end_goals_show" style="left:<%=event.endwidth%>px;top:-1px;">
-	        		</div>
-
-	        		<connection from="#start" to="#stop" color="#00FE83" fromX="0.05" tail onlyVisible></connection>
+	        		<connection from="#start" to="#stop" color="#00FE83"
+	        			fromX="0.5" fromY="0.5" tail>
+	        		</connection>
 
 	        	<%end%>
-
 
 			</div>
 			
@@ -52,17 +56,13 @@
 		
 		<div class="goalcard-footer">
 			<p class="stage"><%=@goal.fixture.season.competition.name%> • Day <%=@goal.fixture.stage%></p>
-			<p><%=@goal.fixture.date%></p>
+			<p><%=@goal_date%></p>
 		</div>
 
 	</div>
 
 </div>
-
-
-
-
-
+<!-- 
 
 <br>
 
@@ -90,4 +90,6 @@
 		<br>
 	<%end%>
 
-</ul>
+</ul> -->
+
+<%= javascript_pack_tag 'domarrows' %>

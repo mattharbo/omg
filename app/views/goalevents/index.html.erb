@@ -5,31 +5,63 @@
 	<small>
 		(<%= goalevent.id %>)
 
+		<small>
+			Goal <%= goalevent.goal.id %> -
+
+			#<%= goalevent.goal.fixture.hometeam.club.acronym %><%= goalevent.goal.fixture.awayteam.club.acronym %>
+
+		</small>
+
 		<strong>
 			<%= goalevent.player.name %>
 		</strong>
 
 		<%if goalevent.penalty? %>
-			(Penalty
+			(<i>Penalty</i>
 		<%elsif goalevent.autogoal? %>
-			(Autogoal
+			(<i>Autogoal</i>
 		<%else%>
 			(<%= goalevent.eventtype.name.capitalize %>
 		<%end%>
 		
 		 at <%= goalevent.goal.minute %>')
 		| 
-		Start: 
-		<strong><%= goalevent.startdepth %>/<%= goalevent.startwidth %></strong>
-		•
-		End:
-		<strong><%= goalevent.enddepth %>/<%= goalevent.endwidth %></strong>
-		•
-		Goal coords:
-		<strong><%= goalevent.goalxcoord %>/<%= goalevent.goalycoord %></strong>
 
-		|
-		#<%= goalevent.goal.fixture.hometeam.club.acronym %><%= goalevent.goal.fixture.awayteam.club.acronym %>
+		<small>
+		
+		Start
+		<%unless goalevent.startdepth.nil?%>
+    		<div class="green dot"></div>
+    	<%else%>
+    		<div class="red dot"></div>
+  		<%end%>
+
+  		End
+		<%unless goalevent.enddepth.nil?%>
+    		<div class="green dot"></div>
+    	<%else%>
+    		<div class="red dot"></div>
+  		<%end%>
+
+  		
+  		<%if goalevent.eventtype.id==1%>
+  			Goal
+			<%unless goalevent.goalxcoord.nil?%>
+	    		<div class="green dot"></div>
+	    	<%else%>
+	    		<div class="red dot"></div>
+	  		<%end%>
+	  	<%else%>
+	  		<i>This is not a goal</i>
+  		<%end%>
+
+  		</small>
+
+  		| 
+
+  		<%= link_to "Edit event", edit_goalevent_path(goalevent.id)%> 
+
+		
 	</small>
 	
 	<br>

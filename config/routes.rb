@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   root :to => "pages#menu"
   get '/designsystem/', to: 'pages#designsystem'
   get '/goaltemplate/', to: 'pages#goaltemplate'
+  get '/record/', to: 'pages#recordtemplate'
   resources :competitions, only:[:index]
   resources :clubs, only:[:index]
   resources :teams, only:[:index]
@@ -13,6 +14,6 @@ Rails.application.routes.draw do
   # get '/game/:id', to: 'fixtures#show'
   resources :eventtypes, only:[:index]
   resources :goals, only:[:index,:new,:create,:show]
-  resources :goalevents, only:[:index]
+  resources :goalevents, only:[:index,:edit,:update]
   
 end

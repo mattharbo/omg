@@ -1,13 +1,13 @@
 const updatepitch=document.getElementById("updatepitch");
-
-// const cage=document.getElementById("thecage");
-
+const updatecage=document.getElementById("updatecage");
+const eventTypeSelect=document.getElementById("goalevent_eventtype");
 
 //-------------------------
 const updatecoords = (event) => {
 
 	const startradiostate=document.getElementById("startradio").checked;
 	const endradiostate=document.getElementById("endradio").checked;
+	const selectedtype = document.getElementById("goalevent_eventtype").value;
 
 	if (startradiostate===true) {
 		console.log("start => true");
@@ -21,7 +21,14 @@ const updatecoords = (event) => {
 		updatepitch.insertAdjacentHTML("beforeend", `<div id="pointerstart" class="pointer_start" 
 		style="top: ${event.offsetY-7}px;left: ${event.offsetX-7}px;"></div>`);
 	}else if (endradiostate===true) {
-		alert("Cage to come…")
+		
+		//if eventType is goal then end=location from cage + depth autodefine
+		if (selectedtype == 1) {
+			alert("Pick in goal area <<<");
+		}else{
+			alert("Can't do anything else than goal for now");
+		}
+
 	}else{
 		alert("Start or end should be checked")
 	}
@@ -29,26 +36,57 @@ const updatecoords = (event) => {
 };
 
 //-------------------------
-const goallocation = (event) => {
+const updategoallocation = (event) => {
 
-	cage.innerHTML="";
+	var lastEndPointer=document.getElementById("pointerstop");
 
-	document.getElementById("goal_goalevents_attributes_0_goalxcoord").value=event.offsetX;
-	document.getElementById("goal_goalevents_attributes_0_goalycoord").value=event.offsetY;
+	if (lastEndPointer !== null) {
+		lastEndPointer.remove();
+	}
+	
+	updatecage.innerHTML="";
+
+	document.getElementById("goalevent_goalxcoord").value=event.offsetX;
+	document.getElementById("goalevent_goalycoord").value=event.offsetY;
+
+	console.log(event.offsetX+"/"+event.offsetY);
 
 	const goallocationonpitch = ((34/192)*event.offsetX)+155;
 
-	document.getElementById("goal_goalevents_attributes_0_enddepth").value=0;
-	document.getElementById("goal_goalevents_attributes_0_endwidth").value=goallocationonpitch.toFixed(1);
+	document.getElementById("goalevent_enddepth").value=0;
+	document.getElementById("goalevent_endwidth").value=goallocationonpitch.toFixed(1);
 
-	cage.insertAdjacentHTML("beforeend", `<div class="pointer_goal" 
+	updatecage.insertAdjacentHTML("beforeend", `<div class="pointer_goal" 
 			style="top: ${event.offsetY-6}px;left: ${event.offsetX-6}px;"></div>`);
 
-	pitch.insertAdjacentHTML("beforeend", `<div class="pointer_end" 
+	updatepitch.insertAdjacentHTML("beforeend", `<div class="pointer_end" 
 			style="top: 0px;left: ${goallocationonpitch}px;"></div>`);
 };
 
 //-------------------------
-updatepitch.addEventListener("click", updatecoords);
+const changeEventType = (event) => {
 
-// cage.addEventListener("click", goallocation);
+	const selectedtype = document.getElementById("goalevent_eventtype").value;
+	const type = document.getElementsByClassName("cagecontainer")[0];
+	const endradiostate=document.getElementById("endradio");
+
+	if (selectedtype == 1) {
+		// if goal then make the cage visible
+		type.style.visibility = "visible";
+
+		endradiostate.checked = true;
+		
+		// and remove the last end point from the pitch
+		var lastEndPointer=document.getElementById("pointerstop");
+		lastEndPointer.remove();
+	}else{
+		type.style.visibility = "hidden";
+		endradiostate.checked = false;
+	}
+
+};
+
+//-------------------------
+eventTypeSelect.addEventListener("change", changeEventType);
+updatepitch.addEventListener("click", updatecoords);
+updatecage.addEventListener("click", updategoallocation);

@@ -28,9 +28,21 @@
 
 .formcontainer{
 	flex-grow:1;
-
 }
 
 .pitchcontainer{
 	margin-left:40px;
+}
+
+.cagecontainer{
+	margin-left:100px;
+	visibility:hidden;
+}
+
+.typelayer{
+	display:flex;
+	justify-content:flex-start;
+	align-items:flex-start;
+	align-content:center;
+	margin-bottom:20px;
 }

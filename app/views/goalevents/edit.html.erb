@@ -25,7 +25,7 @@
 		<%= form_for @event do |f|%>
 
 			<%= f.label :player, "Player"%>
-			<small>(Init: <%=@event.player.name%>)</small>
+			<small>(Init: #<%=@event.player.shirtnumber%> | <%=@event.player.name%>)</small>
        		<%= f.select(:player,options_for_select(@players)) %>
 
        		<br><br>
@@ -36,16 +36,33 @@
 
        		<br><br>
 
-       		<input type="radio" id="startradio" name="eventtype">
-  			<label for="startradio">Start</label>
-  			<input type="radio" id="endradio" name="eventtype">
-  			<label for="endradio">End</label>
+       		<div class="typelayer">
+
+       			<div>
+       				<input type="radio" id="startradio" name="eventtype">
+		  			<label for="startradio">Start</label>
+		  			<input type="radio" id="endradio" name="eventtype">
+		  			<label for="endradio">End</label>
+       			</div>
+       			
+	  			<div class="cagecontainer">
+		            <div class="cagesvgcontainer">
+		                <%= svg 'cage' %>
+		            </div>
+		            <div id="updatecage" class="cage">
+		            </div>
+		        </div>
+
+       		</div>
 
        		<%= f.hidden_field :startdepth %>
 	        <%= f.hidden_field :startwidth %>
 
 	        <%= f.hidden_field :enddepth %>
 	        <%= f.hidden_field :endwidth %>
+
+	        <%= f.hidden_field :goalxcoord %>
+        	<%= f.hidden_field :goalycoord %>
 
 			<%= f.submit 'Update event', class: "primary-btn margin-top" %>
 

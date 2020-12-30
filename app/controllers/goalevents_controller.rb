@@ -21,14 +21,28 @@ class GoaleventsController < ApplicationController
   end
 
   def update
-  	
 
+  	player=Player.find(params['goalevent']['player'])
+  	eventtype=Eventtype.find(params['goalevent']['eventtype'])
 
+  	Goalevent.update(
+  		params['id'],
+		player:player,
+		startdepth:params['goalevent']['startdepth'],
+		startwidth:params['goalevent']['startwidth'],
+		enddepth:params['goalevent']['enddepth'],
+		endwidth:params['goalevent']['endwidth'],
+		goalxcoord:params['goalevent']['goalxcoord'],
+		goalycoord:params['goalevent']['goalycoord'],
+		eventtype:eventtype,
+		# # ######### if eventtype is 1 then assist is 0
+		assist:0
+		# penalty:eventattribute['penalty'],
+		# autogoal:og
+	)
 
+	redirect_to goal_path(Goalevent.find(params['id']).goal)
 
-
-
-  	
   end
 
   private

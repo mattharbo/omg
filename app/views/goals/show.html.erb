@@ -14,10 +14,20 @@
 					<%=@scorer.forename%> <%=@scorer.name%>
 					</a>
 				 <small>
-				  (<%=@goal.team.club.acronym%>)
+				  (<%=@goal.team.club.acronym%>
+				  <%unless @specialgoal.nil?%>
+						• <%=@specialgoal%><%end%>)
 				 </small>
 				</p>
-				<p class="game-info"><%=@goal.fixture.scorehome%>-<%=@goal.fixture.scoreaway%> (<%=@goal.minute%>') <%=@goal.fixture.hometeam.club.shortname%> v <%=@goal.fixture.awayteam.club.shortname%></p>
+				<p class="game-info">
+					<%=@goal.fixture.scorehome%>-<%=@goal.fixture.scoreaway%>
+					(<%=@goal.minute%>')
+					<%=@goal.fixture.hometeam.club.shortname%>
+					v
+					<%=@goal.fixture.awayteam.club.shortname%>
+
+					
+				</p>
 			</div>
 			<div class="share-btn">
 				<%= svg 'share-btn' %>

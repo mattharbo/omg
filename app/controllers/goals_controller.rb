@@ -15,8 +15,13 @@ class GoalsController < ApplicationController
 		@goalevents.each do |goalevent|
 			# assist=0 is a goal
 			if goalevent.assist = 0
-				@scorer=Player.find(goalevent.player.id)
-				# Do something with OG & Penalty					
+				@scorer=Player.find(goalevent.player.id)			
+			end
+
+			if goalevent.penalty?
+				@specialgoal="Penalty"
+			elsif goalevent.autogoal?
+				@specialgoal="Autogoal"
 			end
 		end
 	end

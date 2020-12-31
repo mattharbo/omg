@@ -3,7 +3,7 @@ class GoaleventsController < ApplicationController
 	before_action :set_goalevent, only: [:edit,:update]
 
   def index
-  	@goalevents=Goalevent.all
+  	@goalevents=Goalevent.all.order("id DESC")
   end
 
   def edit

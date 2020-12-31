@@ -2,15 +2,12 @@ class GoalsController < ApplicationController
 	before_action :set_goal, only: [:show,:edit,:update]
 
 	def index
-		@goals=Goal.all
+		@goals=Goal.all.order("id DESC")
 	end
 
 	def show
 		@goal=Goal.find(params[:id])
-
-		@goal_date=display_date(@goal.fixture.date)
-
-		@goalevents=Goalevent.where(goal:@goal.id)
+		@goalevents=Goalevent.where(goal:@goal.id)	
 
 		@goalevents.each do |goalevent|
 			# assist=0 is a goal
@@ -24,6 +21,13 @@ class GoalsController < ApplicationController
 				@specialgoal="Autogoal"
 			end
 		end
+
+		# Define which goal of the game
+		reffixture=Fixture.find(@goal.fixture.id)
+		@whichgoal=definegoal(reffixture,@goal)
+
+		# Update the date display
+		@goal_date=display_date(@goal.fixture.date)
 	end
 
 	def new
@@ -98,5 +102,27 @@ class GoalsController < ApplicationController
 		day=date[date.rindex(/-/)+1,date.length]
 		newdate=month+". "+day+" "+year
 		return newdate
+	end
+
+	def definegoal(fixture,targetgoal)
+		allfixturegoals=Goal.where(fixture:fixture.id)
+		homecounter=0
+		awaycounter=0
+		scoreattime=""
+
+		allfixturegoals.each do |fixturegoal|
+			# Si la team du goal est celle de home alors increm home counter
+			if fixturegoal.team==fixture.hometeam
+				homecounter+=1
+			else
+			# Sinon increm away counter
+				awaycounter+=1
+			end
+			
+			scoreattime="#{homecounter}-#{awaycounter}"
+			break if fixturegoal==targetgoal
+		end
+
+		return scoreattime
 	end
 end
